@@ -23,8 +23,8 @@ Parameters:
     Default: local
     AllowedValues:
       - local
-      - dev
-      - prod
+      - development
+      - production
 
 Mappings:
   LogsRetentionPeriodMap:
