@@ -372,7 +372,7 @@ CodePipelineExecutionRole:
                   - !Sub "arn:${AWS::Partition}:cloudformation:${AWS::Region}:${AWS::AccountId}:stack/${AWS::StackName}/*"
 
   # PipelineStackCloudFormationExecutionRole is used for the pipeline to self mutate
-  PipelineStackCloudFormationExecutionRole:
+PipelineStackCloudFormationExecutionRole:
     Type: AWS::IAM::Role
     Properties:
       AssumeRolePolicyDocument:
@@ -444,7 +444,7 @@ CodePipelineExecutionRole:
                   StringEquals:
                     aws:ResourceTag/Role: pipeline-execution-role
 
-  CodeBuildProjectUnitTest:
+CodeBuildProjectUnitTest:
     Type: AWS::CodeBuild::Project
     Properties:
       Artifacts:
@@ -461,7 +461,7 @@ CodePipelineExecutionRole:
         Type: CODEPIPELINE
         BuildSpec: !Sub "${ProjectSubfolder}/pipeline/buildspec_unit_test.yml"
 
-  CodeBuildProjectBuildAndPackage:
+CodeBuildProjectBuildAndPackage:
     Type: AWS::CodeBuild::Project
     Properties:
       Artifacts:
@@ -504,7 +504,7 @@ CodePipelineExecutionRole:
         Type: CODEPIPELINE
         BuildSpec: !Sub "${ProjectSubfolder}/pipeline/buildspec_integration_test.yml"
 
-  CodeBuildProjectDeploy:
+CodeBuildProjectDeploy:
     Type: AWS::CodeBuild::Project
     Properties:
       Artifacts:
@@ -527,7 +527,7 @@ CodePipelineExecutionRole:
   # /    Y    (  <_> )   |  (  <_> )    |   \  ___/|  |_> >  <_> )
   # \____|__  /\____/|___|  /\____/|____|_  /\___  >   __/ \____/ 
   #         \/            \/              \/     \/|__|           
-  MonorepoTriggerFunction:
+MonorepoTriggerFunction:
     Type: AWS::Serverless::Function
     Properties:
       InlineCode: |
