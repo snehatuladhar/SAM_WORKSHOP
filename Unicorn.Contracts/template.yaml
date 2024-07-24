@@ -30,16 +30,16 @@ Mappings:
   LogsRetentionPeriodMap:
     local:
       Days: 3
-    dev:
+    development:
       Days: 3
-    prod:
+    production:
       Days: 14
   Constants:
     ProjectName:
       Value: "AWS Serverless Developer Experience"
 
 Conditions:
-  IsProd: !Equals [!Ref Stage, Prod]
+  IsProd: !Equals [!Ref Stage, Production]
 
 Globals:
   Api:
