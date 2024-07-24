@@ -396,7 +396,7 @@ PipelineStackCloudFormationExecutionRole:
   # | |   / _ \ / _` |/ _ |  _ \| | | | | |/ _` |
   # | |__| (_) | (_| |  __| |_) | |_| | | | (_| |
   #  \____\___/ \__,_|\___|____/ \__,_|_|_|\__,_|
-  CodeBuildServiceRole:
+CodeBuildServiceRole:
     Type: AWS::IAM::Role
     Properties:
       Tags:
