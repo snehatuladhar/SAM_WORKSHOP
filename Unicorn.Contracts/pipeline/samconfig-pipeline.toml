@@ -30,7 +30,7 @@ region = "us-east-1"
 template = "packaged-prod.yaml"
 fail_on_empty_changeset = false
 capabilities = "CAPABILITY_IAM CAPABILITY_AUTO_EXPAND"
-parameter_overrides = "Stage=\"prod\""
+parameter_overrides = "Stage=\"Production\""
 
 # ############################################## #
 
