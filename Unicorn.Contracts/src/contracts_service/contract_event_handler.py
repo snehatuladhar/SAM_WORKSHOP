@@ -24,6 +24,7 @@ table = dynamodb.Table(DYNAMODB_TABLE)  # type: ignore
 
 def lambda_handler(event: dict, context: dict):
     # Multiple records can be delivered in a single event
+    #Multiple records can be delivered in a single event
     for record in event['Records']:
         http_method = record['messageAttributes'].get('HttpMethod', {}).get('stringValue')
         body = json.loads(record['body'])
